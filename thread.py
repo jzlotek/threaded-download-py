@@ -127,6 +127,10 @@ if __name__ == "__main__":
     for line in sys.stdin:
         files.append(line.strip())
 
+    if len(files) == 0:
+        print("No urls provided...")
+        exit(1)
+
     files = split_url_list(files, num)
 
     # make sure we don't spawn additional threads
